@@ -14,6 +14,7 @@ use Magento\Framework\Api\FilterBuilder;
 use Magento\Framework\Api\Search\SearchCriteriaBuilder;
 use Magento\Framework\Escaper;
 use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Filter\FilterManager;
 use Magento\Framework\Notification\MessageInterface;
 use Magento\Framework\Notification\NotifierInterface;
 use Magento\Framework\Stdlib\DateTime\DateTime;
@@ -44,6 +45,11 @@ class UpdateFeed
     private $notifier;
 
     /**
+     * @var FilterManager
+     */
+    private $filterManager;
+
+    /**
      * @var Escaper
      */
     private $escaper;
@@ -63,6 +69,7 @@ class UpdateFeed
         SearchCriteriaBuilder $searchCriteriaBuilder,
         FeedRepository $feedRepository,
         NotifierInterface $notifier,
+        FilterManager $filterManager,
         Escaper $escaper,
         DateTime $date,
         LoggerInterface $logger
@@ -71,6 +78,7 @@ class UpdateFeed
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;
         $this->feedRepository = $feedRepository;
         $this->notifier = $notifier;
+        $this->filterManager = $filterManager;
         $this->escaper = $escaper;
         $this->date = $date;
         $this->logger = $logger;
@@ -113,10 +121,11 @@ class UpdateFeed
                 if ($feed->getDateModified() > $lastUpdated) {
                     foreach ($feed as $entry) {
                         if ($entry->getDateModified() > $lastUpdated) {
+                            $content = $this->filterManager->removeTags($entry->getContent());
                             $this->notifier->add(
                                 $this->getSeverityFromCategories($entry->getCategories(), $subscription->getSeverity()),
                                 $this->escaper->escapeHtml($entry->getTitle()),
-                                $this->escaper->escapeHtml($entry->getContent()),
+                                $this->escaper->escapeHtml($content),
                                 $this->escaper->escapeHtml($entry->getLink(1) ?? $entry->getLink()),
                                 false
                             );
