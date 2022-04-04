@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- # data interface preferences -->
+    <preference for="Netresearch\AdminNotificationFeed\Api\Data\FeedInterface" type="Netresearch\AdminNotificationFeed\Model\Feed"/>
+    <preference for="Netresearch\AdminNotificationFeed\Api\Data\FeedSearchResultsInterface" type="Netresearch\AdminNotificationFeed\Model\FeedSearchResults"/>
+
+    <!-- # argument di overrides -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="nradminfeed_grid_data_source" xsi:type="string">Netresearch\AdminNotificationFeed\Model\ResourceModel\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

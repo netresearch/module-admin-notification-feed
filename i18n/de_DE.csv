@@ -1,0 +1,33 @@
+"Add Feed","Feed hinzufügen"
+"Admin Notification Feed","Feed für Händlerbenachrichtigungen"
+"Are you sure you want to delete feed ""%1""?","Sind Sie sicher, dass Sie den Feed ""%1"" entfernen wollen?"
+Back,Zurück
+Critical,Critical
+"Default Severity",Standard-Einstufung
+Delete,Löschen
+Disabled,Deaktiviert
+Edit,Bearbeiten
+"Edit Feed","Feed bearbeiten"
+Enabled,Aktiviert
+"Feed ""%1"" was successfully removed.","Feed ""%1"" wurde erfolgreich entfernt."
+"Feed was successfully added.","Feed wurde erfolgreich hinzugefügt."
+"Feed was successfully updated.","Feed wurde erfolgreich aktualisiert."
+ID,ID
+Major,Major
+"Manage Feeds","Feeds verwalten"
+Minor,Minor
+"New Feed","Feed anlegen"
+Notice,Notice
+"Notification Feeds",Benachrichtigungs-Feeds
+"RSS or Atom Feed URL","RSS- oder Atom-Feed-URL"
+Save,Speichern
+Status,Status
+Subscribe,Abonnieren
+System,System
+"This feed no longer exists.","Dieser Feed existiert nicht mehr."
+Title,Titel
+"Unable to delete feed: %1","Feed konnte nicht entfernt werden: %1"
+"Unable to load feed with id %1.","Der Feed mit der ID %1 konnte nicht geladen werden."
+"Unable to save feed: %1.","Feed konnte nicht gespeichert werden: %1"
+Updated,Aktualisiert
+"View Feeds","Feeds einsehen"

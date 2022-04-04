@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="nr_admin_notification_feed" resource="default" engine="innodb" comment="Admin Notification Feed">
+        <column name="entity_id" xsi:type="int" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column name="is_enabled" xsi:type="smallint" unsigned="true" nullable="false" identity="false" comment="Is Enabled Flag"/>
+        <column name="feed_title" xsi:type="varchar" nullable="false" length="255" comment="Feed Title"/>
+        <column name="feed_url" xsi:type="varchar" nullable="false" length="255" comment="Feed URL"/>
+        <column name="severity" xsi:type="smallint" unsigned="true" nullable="false" identity="false" default="4" comment="Default Severity"/>
+        <column name="updated_at" xsi:type="timestamp" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Feed Updated At Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

@@ -1,0 +1,33 @@
+"Add Feed","Add Feed"
+"Admin Notification Feed","Admin Notification Feed"
+"Are you sure you want to delete feed ""%1""?","Are you sure you want to delete feed ""%1""?"
+Back,Back
+Critical,Critical
+"Default Severity","Default Severity"
+Delete,Delete
+Disabled,Disabled
+Edit,Edit
+"Edit Feed","Edit Feed"
+Enabled,Enabled
+"Feed ""%1"" was successfully removed.","Feed ""%1"" was successfully removed."
+"Feed was successfully added.","Feed was successfully added."
+"Feed was successfully updated.","Feed was successfully updated."
+ID,ID
+Major,Major
+"Manage Feeds","Manage Feeds"
+Minor,Minor
+"New Feed","New Feed"
+Notice,Notice
+"Notification Feeds","Notification Feeds"
+"RSS or Atom Feed URL","RSS or Atom Feed URL"
+Save,Save
+Status,Status
+Subscribe,Subscribe
+System,System
+"This feed no longer exists.","This feed no longer exists."
+Title,Title
+"Unable to delete feed: %1","Unable to delete feed: %1"
+"Unable to load feed with id %1.","Unable to load feed with id %1."
+"Unable to save feed: %1.","Unable to save feed: %1."
+Updated,Updated
+"View Feeds","View Feeds"

@@ -4,6 +4,7 @@
  * See LICENSE.md for license details.
  */
 -->
+<!-- fixme(nr): delete once cron is ready -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="controller_action_predispatch">
         <observer name="nradminfeed_update_inbox" instance="Netresearch\AdminNotificationFeed\Observer\UpdateFeed" />

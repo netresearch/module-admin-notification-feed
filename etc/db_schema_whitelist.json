@@ -1,0 +1,15 @@
+{
+    "nr_admin_notification_feed": {
+        "column": {
+            "entity_id": true,
+            "is_enabled": true,
+            "feed_title": true,
+            "feed_url": true,
+            "severity": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

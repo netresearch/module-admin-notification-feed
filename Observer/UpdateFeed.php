@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Netresearch\AdminNotificationFeed\Observer;
 
 use Laminas\Feed\Reader\Collection\Category;
-use Laminas\Feed\Reader\Exception\RuntimeException;
 use Laminas\Feed\Reader\Reader;
 use Magento\Backend\Model\Auth\Session as AuthSession;
 use Magento\Framework\App\DeploymentConfig;
@@ -111,7 +110,7 @@ class UpdateFeed implements ObserverInterface
 
             try {
                 $feed = Reader::import($this->feed->getUrl());
-            } catch (RuntimeException $exception) {
+            } catch (\RuntimeException $exception) {
                 $this->logger->error(
                     'Error reading from feed URI ' . $this->feed->getUrl(),
                     ['exception' => $exception]

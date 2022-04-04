@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Netresearch_AdminNotificationFeed::feeds"
+             title="Notification Feeds"
+             translate="title"
+             sortOrder="15"
+             module="Netresearch_AdminNotificationFeed"
+             resource="Netresearch_AdminNotificationFeed::view"
+             parent="Magento_Backend::system_other_settings"
+             action="nradminfeed/feed/index"/>
+    </menu>
+</config>
