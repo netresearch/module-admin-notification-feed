@@ -102,7 +102,7 @@ class UpdateFeed
         return $defaultSeverity;
     }
 
-    public function execute()
+    public function execute(): void
     {
         $filter = $this->filterBuilder
             ->setField(FeedInterface::IS_ENABLED)
