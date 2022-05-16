@@ -6,7 +6,7 @@ subscribing to news feeds that show up in the admin notifications.
 
 Requirements
 ------------
-* PHP >= 7.1.3
+* PHP >= 7.2
 
 Compatibility
 -------------
