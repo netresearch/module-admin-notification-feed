@@ -15,7 +15,7 @@ use Magento\Framework\Notification\MessageInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
 use Netresearch\AdminNotificationFeed\Api\Data\FeedInterface;
-use Netresearch\AdminNotificationFeed\Api\Data\FeedInterfaceFactory;
+use Netresearch\AdminNotificationFeed\Model\FeedFactory;
 use Netresearch\AdminNotificationFeed\Model\FeedRepository;
 use Psr\Log\LoggerInterface;
 
@@ -24,7 +24,7 @@ class RegisterFeedPatch implements DataPatchInterface, PatchRevertableInterface
     private const FEED_URL = 'https://feed.dhl.netresearch.de/de/blog.atom';
 
     /**
-     * @var FeedInterfaceFactory
+     * @var FeedFactory
      */
     private $feedFactory;
 
@@ -44,7 +44,7 @@ class RegisterFeedPatch implements DataPatchInterface, PatchRevertableInterface
     private $logger;
 
     public function __construct(
-        FeedInterfaceFactory $feedFactory,
+        FeedFactory $feedFactory,
         SearchCriteriaBuilder $searchCriteriaBuilder,
         FeedRepository $feedRepository,
         LoggerInterface $logger

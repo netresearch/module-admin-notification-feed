@@ -29,10 +29,5 @@
         "magento/module-ui": "^101.1.5"
     },
     "require-dev": {
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-develop": "1.0.x-dev"
-        }
     }
 }
