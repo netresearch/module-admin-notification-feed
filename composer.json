@@ -1,6 +1,6 @@
 {
     "name": "netresearch/module-admin-notification-feed",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "magento2-module",
     "description": "Admin Notification Feed",
     "license": "OSL-3.0",
@@ -21,12 +21,12 @@
         ]
     },
     "require": {
-        "php": "^7.2.0 || ^8.1.0",
-        "laminas/laminas-feed": "^2.9.0",
-        "magento/framework": "^102.0.0 || ^103.0.0",
-        "magento/module-backend": "^101.0.0 || ^102.0.0",
-        "magento/module-cron": "^100.3.0",
-        "magento/module-ui": "^101.1.5"
+        "php": "^8.2.0",
+        "laminas/laminas-feed": "^2.17.0",
+        "magento/framework": "^103.0.6",
+        "magento/module-backend": "^102.0.6",
+        "magento/module-cron": "^100.4.6",
+        "magento/module-ui": "^101.2.6"
     },
     "require-dev": {
     }
