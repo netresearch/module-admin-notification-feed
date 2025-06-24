@@ -36,6 +36,7 @@ class NewAction extends Action implements HttpGetActionInterface
         parent::__construct($context);
     }
 
+    #[\Override]
     public function execute(): ResultInterface
     {
         $resultForward = $this->resultForwardFactory->create();

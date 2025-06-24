@@ -72,7 +72,7 @@ class FeedRepository
 
         try {
             $this->feedResource->load($feed, $feedId);
-        } catch (\Exception $exception) {
+        } catch (\Exception) {
             throw new NoSuchEntityException(__('Unable to load feed with id %1.', $feedId));
         }
 

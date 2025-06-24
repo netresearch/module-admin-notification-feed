@@ -17,6 +17,7 @@ use Netresearch\AdminNotificationFeed\Model\ResourceModel\Feed as FeedResource;
  */
 class Collection extends AbstractCollection
 {
+    #[\Override]
     protected function _construct()
     {
         $this->_init(Feed::class, FeedResource::class);

@@ -13,6 +13,7 @@ use Magento\Framework\Notification\MessageInterface;
 
 class Severity implements OptionSourceInterface
 {
+    #[\Override]
     public function toOptionArray(): array
     {
         return [

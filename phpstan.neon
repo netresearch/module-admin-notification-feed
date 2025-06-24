@@ -1,0 +1,7 @@
+parameters:
+    level: 1
+    treatPhpDocTypesAsCertain: false
+    paths:
+        - vendor/netresearch/module-admin-notification-feed/
+    excludePaths:
+        - Test/*

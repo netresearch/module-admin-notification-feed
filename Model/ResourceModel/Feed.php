@@ -19,11 +19,13 @@ class Feed extends AbstractDb
      *
      * @return void
      */
+    #[\Override]
     protected function _construct()
     {
         $this->_init('nr_admin_notification_feed', FeedInterface::ENTITY_ID);
     }
 
+    #[\Override]
     protected function _beforeSave(AbstractModel $object): self
     {
         $wasEnabled = $object->getOrigData(FeedInterface::IS_ENABLED);

@@ -36,6 +36,7 @@ class Edit extends Action implements HttpGetActionInterface
         parent::__construct($context);
     }
 
+    #[\Override]
     public function execute(): ResultInterface
     {
         $title = $this->getRequest()->getParam('feed_id') ? __('Edit Feed') : __('New Feed');

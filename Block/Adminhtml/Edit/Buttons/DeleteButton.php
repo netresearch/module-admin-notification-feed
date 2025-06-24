@@ -39,6 +39,7 @@ class DeleteButton implements ButtonProviderInterface
         $this->urlBuilder = $urlBuilder;
     }
 
+    #[\Override]
     public function getButtonData(): array
     {
         $feedId = (int) $this->request->getParam('feed_id');
@@ -48,7 +49,7 @@ class DeleteButton implements ButtonProviderInterface
 
         try {
             $feed = $this->feedRepository->get((int) $this->request->getParam('feed_id'));
-        } catch (NoSuchEntityException $exception) {
+        } catch (NoSuchEntityException) {
             return [];
         }
 

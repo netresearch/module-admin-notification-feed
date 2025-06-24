@@ -55,11 +55,13 @@ class RegisterFeedPatch implements DataPatchInterface, PatchRevertableInterface
         $this->logger = $logger;
     }
 
+    #[\Override]
     public static function getDependencies(): array
     {
         return [];
     }
 
+    #[\Override]
     public function getAliases(): array
     {
         return [];
@@ -70,6 +72,7 @@ class RegisterFeedPatch implements DataPatchInterface, PatchRevertableInterface
      *
      * @return void
      */
+    #[\Override]
     public function apply(): void
     {
         $feed = $this->feedFactory->create();
@@ -87,6 +90,7 @@ class RegisterFeedPatch implements DataPatchInterface, PatchRevertableInterface
         }
     }
 
+    #[\Override]
     public function revert(): void
     {
         $feeds = $this->feedRepository->getList($this->searchCriteriaBuilder->create());

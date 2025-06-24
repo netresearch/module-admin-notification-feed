@@ -44,6 +44,7 @@ class FeedProvider extends AbstractDataProvider
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
 
+    #[\Override]
     public function getData(): array
     {
         $loadedData = [];
@@ -65,6 +66,7 @@ class FeedProvider extends AbstractDataProvider
     /**
      * @return AbstractCollection
      */
+    #[\Override]
     public function getCollection(): AbstractCollection
     {
         if ($this->collection === null) {

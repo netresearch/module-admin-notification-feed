@@ -15,7 +15,6 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Netresearch\AdminNotificationFeed\Api\Data\FeedInterfaceFactory;
 use Netresearch\AdminNotificationFeed\Model\FeedRepository;
 
 class Delete extends Action implements HttpGetActionInterface, HttpPostActionInterface
@@ -32,13 +31,14 @@ class Delete extends Action implements HttpGetActionInterface, HttpPostActionInt
      */
     private $feedRepository;
 
-    public function __construct(Context $context, FeedRepository $feedRepository, FeedInterfaceFactory $feedFactory)
+    public function __construct(Context $context, FeedRepository $feedRepository)
     {
         $this->feedRepository = $feedRepository;
 
         parent::__construct($context);
     }
 
+    #[\Override]
     public function execute(): ResultInterface
     {
         $resultRedirect = $this->resultRedirectFactory->create();
@@ -49,8 +49,10 @@ class Delete extends Action implements HttpGetActionInterface, HttpPostActionInt
             try {
                 $feed = $this->feedRepository->get($feedId);
                 $this->feedRepository->delete($feed);
-                $this->messageManager->addSuccessMessage(__('Feed "%1" was successfully removed.', $feed->getFeedTitle()));
-            } catch (NoSuchEntityException $exception) {
+                $this->messageManager->addSuccessMessage(
+                    __('Feed "%1" was successfully removed.', $feed->getFeedTitle()
+                ));
+            } catch (NoSuchEntityException) {
                 $this->messageManager->addErrorMessage(__('This feed no longer exists.'));
             } catch (CouldNotDeleteException $exception) {
                 $this->messageManager->addExceptionMessage($exception);

@@ -45,6 +45,7 @@ class Save extends Action implements HttpPostActionInterface
         parent::__construct($context);
     }
 
+    #[\Override]
     public function execute(): ResultInterface
     {
         $resultRedirect = $this->resultRedirectFactory->create();
@@ -54,7 +55,7 @@ class Save extends Action implements HttpPostActionInterface
         if ($feedId) {
             try {
                 $feed = $this->feedRepository->get($feedId);
-            } catch (NoSuchEntityException $exception) {
+            } catch (NoSuchEntityException) {
                 $this->messageManager->addErrorMessage(__('This feed no longer exists.'));
                 return $resultRedirect;
             }

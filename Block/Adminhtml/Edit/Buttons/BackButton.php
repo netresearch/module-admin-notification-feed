@@ -23,6 +23,7 @@ class BackButton implements ButtonProviderInterface
         $this->urlBuilder = $urlBuilder;
     }
 
+    #[\Override]
     public function getButtonData(): array
     {
         return [

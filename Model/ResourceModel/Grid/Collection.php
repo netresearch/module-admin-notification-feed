@@ -27,8 +27,8 @@ class Collection extends FeedCollection implements SearchResultInterface
         LoggerInterface $logger,
         FetchStrategyInterface $fetchStrategy,
         ManagerInterface $eventManager,
-        AdapterInterface $connection = null,
-        AbstractDb $resource = null
+        ?AdapterInterface $connection = null,
+        ?AbstractDb $resource = null
     ) {
         parent::__construct($entityFactory, $logger, $fetchStrategy, $eventManager, $connection, $resource);
 
@@ -39,37 +39,44 @@ class Collection extends FeedCollection implements SearchResultInterface
      */
     private $aggregations;
 
-    public function setItems(array $items = null)
+    #[\Override]
+    public function setItems(?array $items = null)
     {
         return $this;
     }
 
+    #[\Override]
     public function getAggregations()
     {
         return $this->aggregations;
     }
 
+    #[\Override]
     public function setAggregations($aggregations)
     {
         $this->aggregations = $aggregations;
         return $this;
     }
 
+    #[\Override]
     public function getSearchCriteria()
     {
         return null;
     }
 
+    #[\Override]
     public function setSearchCriteria(SearchCriteriaInterface $searchCriteria)
     {
         return $this;
     }
 
+    #[\Override]
     public function getTotalCount()
     {
         return $this->getSize();
     }
 
+    #[\Override]
     public function setTotalCount($totalCount)
     {
         return $this;
